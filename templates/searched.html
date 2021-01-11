@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1>Results for {{ q }}</h1>
+    <p>{{ data['count'] }} results found</p>
+    <form method="get">
+        <div>
+            <input type="text" class="form-control" name="q">
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for d in data['result'] %}
+            <tr>
+                <th>{{ d['description'] }}</th>
+                <td><a href="/{{ d['symbol' ]}}">{{ d['symbol'] }}</a></td>
+                <td>{{ d['type' ]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}

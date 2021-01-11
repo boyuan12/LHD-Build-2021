@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <h1>Search for a stock</h1>
+        <form method="get">
+            <div>
+                <input type="text" class="form-control" name="q">
+            </div>
+        </form>
+    </div>
+{% endblock %}

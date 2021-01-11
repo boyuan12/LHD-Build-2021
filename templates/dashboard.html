@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1>Dashboard</h1>
+    <h2>Your Portfolio</h2>
+    <h3>You currently have {{ stocks|length }} stock(s). </h3>
+{% endblock %}

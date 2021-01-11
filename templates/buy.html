@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-9">
+            <h1>{{ data['ticker'] }}</h1>
+            <h3>{{ data['name'] }}</h3>
+            <img src="{{ data['logo'] }}">
+        </div>
+        <div class="col-3">
+            <b>Current Price: ${{ price }}/share</b>
+            <form method="POST" action="/buy/{{ data['ticker'] }}">
+                <label>Amount of $ you want to buy on {{ data['ticker'] }}</label>
+                <div>
+                    <input type="number" name="amount" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">BUY {{ data['ticker'] }}</button>
+            </form>
+
+            <br><br>
+
+            <form method="POST" action="/sell/{{ data['ticker'] }}">
+                <label>Amount of $ you want to sell on {{ data['ticker'] }}</label>
+                <span>You can sell maximum ${{ amount }}</span>
+                <div>
+                    <input type="number" name="amount" class="form-control" max="{{ amount }}">
+                </div>
+                <button type="submit" class="btn btn-danger">SELL {{ data['ticker'] }}</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
