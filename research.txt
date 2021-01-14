@@ -1,3 +1,0 @@
-This reseach is based of Wikipedia page: https://en.wikipedia.org/wiki/Blockchain
-
-Blockchain is decentralized service. Is a growing list of records, also known as blocks. It's also a way of demonstrating cryptography. It's also hard to modify, as the there will be many blocks connect under the block. It's also a peer-to-peer network. This also leads cryptocurrency, such as bitcoin, ethurnum, etc.
